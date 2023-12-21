@@ -1,6 +1,7 @@
 const extractHtmlBlock = (text) => {
   // regex pattern
-  const pattern = /(<div data-state-token="[^"]*" decode-data-ved="1"[^>]*>.*?3;\[9\]0;)/s;
+  const pattern =
+    /(<div data-state-token="[^"]*" decode-data-ved="1"[^>]*>.*?3;\[9\]0;)/s;
 
   // find matches
   const matches = text.match(pattern);
@@ -8,9 +9,10 @@ const extractHtmlBlock = (text) => {
   // process matches
   if (matches) {
     // remove ending string
-    const cleanedMatch = matches[0].replace('3;[9]0;', '');
+    const cleanedMatch = matches[0].replace("3;[9]0;", "");
     return cleanedMatch;
   }
 
   return null;
 };
+module.exports = { extractHtmlBlock };

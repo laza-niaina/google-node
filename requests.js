@@ -1,21 +1,19 @@
-const axios = require('axios');
+const axios = require("axios");
 
 class Requests {
   constructor() {
-    this.session = axios.create({
-      headers: {
-        'Host': 'www.google.com',
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0',
-        'Accept': '*/*',
-        'Referer': 'https://www.google.com/'
-      }
-    });
+    this.session = axios.create();
+    this.session.defaults.headers.common["Host"] = "www.google.com";
+    this.session.defaults.headers.common["User-Agent"] =
+      "Mozilla/5.0 (X11; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0";
+    this.session.defaults.headers.common["Accept"] = "*/*";
+    this.session.defaults.headers.common["Referer"] = "https://www.google.com/";
   }
 
   async get(url, options) {
     try {
-      const response = await this.session.get(url, options);
-      return response.data;
+      const response = await this.session.get(url, this._mergeHeaders(options));
+      return response;
     } catch (error) {
       throw error;
     }
@@ -23,12 +21,26 @@ class Requests {
 
   async post(url, data, options) {
     try {
-      const response = await this.session.post(url, data, options);
-      return response.data;
+      const response = await this.session.post(
+        url,
+        data,
+        this._mergeHeaders(options),
+      );
+      return response;
     } catch (error) {
       throw error;
     }
   }
+
+  _mergeHeaders(options) {
+    // Merge custom headers with default headers
+    const headers = Object.assign(
+      {},
+      this.session.defaults.headers.common,
+      options.headers || {},
+    );
+    return { ...options, headers };
+  }
 }
 
-module.exports = Requests;
+module.exports = { Requests };
