@@ -1,6 +1,9 @@
-const { PageSearch } = require("./pagesearch/index");
-const tut = new PageSearch("elon");
+const { PageSearch } = require("../pagesearch");
+const { NewsSearch } = require("../newssearch");
+//const pages = new PageSearch("elon");
+const news = new NewsSearch("elon musk");
 async function main() {
-  console.log(await tut.getResults());
+  //console.log(await pages.getResults());
+  console.log(`RESULT TEST : ${await news.__getResults()}`);
 }
 main();

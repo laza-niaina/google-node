@@ -1,7 +1,7 @@
 {
   "name": "google-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Node.js wrapper for GoogleSearch API that is not officially supported. The wrapper utilizes scraping techniques to extract data from the GoogleSearch website and reverse-engineer the AJAX API specifically designed for Google Images.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

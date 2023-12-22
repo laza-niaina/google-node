@@ -1,8 +1,9 @@
 const axios = require("axios");
 const { parseHtmlResult } = require("./parser");
+const { Requests } = require("../requests");
 const { LANGUAGES } = require("../constants");
-const { GoogleSearch, Requests, extractHtmlBlock } = require("../index");
-
+const { extractHtmlBlock } = require("../utils");
+const { GoogleSearch } = require("../googlesearch");
 class FileSearch extends GoogleSearch {
   constructor(
     query,
