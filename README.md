@@ -4,9 +4,7 @@
 
 
 ## Installation
-
-[Provide instructions on how to install your project]
-
+Clone and import this repo in your project 
 
 ````bash 
 git clone https://github.com/laza-niaina/google-node
