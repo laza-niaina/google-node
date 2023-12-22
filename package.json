@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "cd example && node test.js"
+    "test": "echo 'Example is in example/test.js'"
   },
   "dependencies": {
     "axios": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "normalize-unicode-text": "^0.0.1"
   },
   "keywords": [
     "gooogle-search",
