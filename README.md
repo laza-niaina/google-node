@@ -29,7 +29,10 @@ WebSearch()
 const {ImageSearch}=
 require("./google-node");
 const images= new ImageSearch("Mark Zuck")
-
+async function searchImage() {
+	console.log(await images.getFirstResults());
+}
+searchImage()
 ````
 
 <h3>Google NewsSearch :</h3>
