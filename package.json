@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo 'Example is in example/test.js'"
+    "test": "node lib/example/test.js"
   },
   "dependencies": {
     "axios": "^1.6.2",
