@@ -71,7 +71,7 @@ translate();
 ```
 
 > [!NOTE]
-> A full example can be found [here](https://github.com/laza-niaina/google-node/lib/example/test.js)
+> A full example can be found [here](https://github.com/laza-niaina/google-node/blob/main/lib/example/test.js)
 
 ## License
 
